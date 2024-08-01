@@ -1,4 +1,4 @@
-name: Java CI with Maven
+name: CI for Spring Boot and React
 
 on:
   push:
@@ -22,15 +22,32 @@ jobs:
         java-version: '11' # Adjust the Java version as needed
         distribution: 'adoptopenjdk'
 
-    - name: Set up Maven
-      uses: actions/setup-java@v3
+    - name: Build Spring Boot with Maven
+      run: |
+        cd path/to/spring-boot-project
+        mvn clean install --batch-mode
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
       with:
-        java-version: '11' # Adjust the Java version as needed
-        distribution: 'adoptopenjdk'
-        maven-version: '3.8.8' # Adjust the Maven version as needed
+        node-version: '18' # Adjust the Node.js version as needed
 
-    - name: Build with Maven
-      run: mvn clean install --batch-mode
+    - name: Install dependencies for React
+      run: |
+        cd path/to/react-project
+        npm install
 
-    - name: Run tests
-      run: mvn test --batch-mode
+    - name: Build React project
+      run: |
+        cd path/to/react-project
+        npm run build
+
+    - name: Run tests for Spring Boot
+      run: |
+        cd path/to/spring-boot-project
+        mvn test --batch-mode
+
+    - name: Run tests for React
+      run: |
+        cd path/to/react-project
+        npm test
