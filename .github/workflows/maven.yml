@@ -29,19 +29,6 @@ jobs:
         distribution: 'adoptopenjdk'
         maven-version: '3.8.8' # Adjust the Maven version as needed
 
-    - name: Configure Maven settings
-      run: |
-        mkdir -p ~/.m2
-        echo "<settings>
-        <servers>
-          <server>
-            <id>github</id>
-            <username>${{ secrets.MAVEN_USERNAME }}</username>
-            <password>${{ secrets.MAVEN_PASSWORD }}</password>
-          </server>
-        </servers>
-        </settings>" > ~/.m2/settings.xml
-
     - name: Build with Maven
       run: mvn clean install --batch-mode
 
