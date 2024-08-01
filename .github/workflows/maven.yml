@@ -1,4 +1,4 @@
-name: Employee CI/CD Pipeline
+name: Build Multi-Module Project
 
 on:
   push:
@@ -10,18 +10,26 @@ on:
 
 jobs:
   build:
+    name: Build All Modules
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-    - name: Set up JDK 17
-      uses: actions/setup-java@v4
-      with:
-        java-version: '17'
-        distribution: 'temurin'
-        cache: maven
+      - name: Set up JDK
+        uses: actions/setup-java@v3
+        with:
+          java-version: '11' # Adjust this to your project's Java version
+          distribution: 'adopt-openjdk'
 
-    - name: Build with Maven
-      run: mvn -B package --file pom.xml
+      - name: Cache Maven dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.m2/repository
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-maven-
+
+      - name: Build with Maven
+        run: mvn clean install --batch-mode
