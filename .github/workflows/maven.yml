@@ -17,7 +17,9 @@ jobs:
 
     # List directory contents to ensure 'pom.xml' is present
     - name: List directory contents
-      run: ls -la
+      run: |
+        ls -la
+        ls -la springboot-backend
 
     # Set up JDK 17
     - name: Set up JDK 17
@@ -27,9 +29,11 @@ jobs:
         distribution: 'temurin'
         cache: maven
 
-    # Build with Maven, using debug output for troubleshooting
+    # Change to the project directory and build with Maven
     - name: Build with Maven
-      run: mvn clean install -X
+      run: |
+        cd springboot-backend
+        mvn clean install -X
 
     # Optional: Upload Maven dependency graph to GitHub
     - name: Update dependency graph
