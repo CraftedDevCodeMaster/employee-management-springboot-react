@@ -29,7 +29,7 @@ This project is an Employee Management System built using Spring Boot for the ba
 
 ## Getting Started
 
-## Screenshot
+## Same Images of the Project
 ![Screenshot 2024-07-26 185616](https://github.com/user-attachments/assets/8f273b61-aca9-45f4-8772-899e0adbf5ee)
 ![Screenshot 2024-07-26 185630](https://github.com/user-attachments/assets/90d6dfd0-f5d6-4ca3-bd38-c1d41504cf6c)
 ![Screenshot 2024-07-26 185707](https://github.com/user-attachments/assets/767d0740-1b4c-439d-9419-a686020c1b2d)
@@ -39,14 +39,7 @@ This project is an Employee Management System built using Spring Boot for the ba
 ![Screenshot 2024-07-26 190012](https://github.com/user-attachments/assets/438be56d-ee06-42b0-a634-8820cead0c04)
 ![Screenshot 2024-07-26 190040](https://github.com/user-attachments/assets/918bd7aa-6e1d-4893-98e8-58da0ef90cd3)
 
-
-### Clone the repository
+### Clone the Repository
 
 ```bash
-git clone https://github.com/CraftedDevCodeMaster/employee-management-springboot-react.git
-cd employee-management-springboot-react
-
-
-
-
-
+git clone https://github.com/CraftedDevCodeMaster/employee-management-springboot-react.git && cd employee-management-springboot-react
