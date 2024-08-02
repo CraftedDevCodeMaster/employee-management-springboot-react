@@ -34,3 +34,9 @@ This project is an Employee Management System built using Spring Boot for the ba
 ```bash
 git clone https://github.com/CraftedDevCodeMaster/employee-management-springboot-react.git
 cd employee-management-springboot-react
+
+
+![Screenshot 2024-07-26 190040](https://github.com/user-attachments/assets/918bd7aa-6e1d-4893-98e8-58da0ef90cd3)
+
+
+
